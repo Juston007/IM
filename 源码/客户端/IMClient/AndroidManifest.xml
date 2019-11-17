@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.im.aty"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppBaseTheme1" >
+        <activity
+            android:name="com.im.aty.WelcomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.im.aty.LoginActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.MainFrameActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.MsgActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.ContactsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.MeActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.MeInfoActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.UserInfoActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.MessageActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.TextBrowseActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.im.aty.ImageActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <service android:name="com.im.service.IMService" >
+        </service>
+
+        <activity
+            android:name="com.im.aty.HandlerRequestActivity"
+            android:label="@string/app_name" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_selector"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:context=".ContactsActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#00000000" >
+
+        <ImageView
+            android:id="@+id/img_list_handler_face"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/face_icon_people" />
+
+        <TextView
+            android:id="@+id/txt_list_handler_alias"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:text="用户昵称" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:background="#00000000"
+        android:gravity="right"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_list_handler_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_selector"
+            android:text="接受"
+            android:textColor="#FFFFFFFF"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btn_list_handler_refuse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_selector"
+            android:text="拒绝"
+            android:textColor="#FFFFFFFF"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</LinearLayout>

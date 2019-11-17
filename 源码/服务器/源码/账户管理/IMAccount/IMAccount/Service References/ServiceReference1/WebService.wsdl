@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RegUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="alias" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldpwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newpwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPwdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddFriend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="touid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFriendResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteFriend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFriendResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="HandlerFriendRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senduid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="handler" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HandlerFriendRequestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFriendRequestList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFriendRequestListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFriendList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFriendListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="touid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgtype" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="touid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isread" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMessageContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgtype" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageContentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queryuid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateFace">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="base64str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFaceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFace">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queryuid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFaceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="alias" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="sex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUnHandlerEventList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnHandlerEventListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSenderUid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSenderUidResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RegUser" />
+  </wsdl:message>
+  <wsdl:message name="RegUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RegUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetPwd" />
+  </wsdl:message>
+  <wsdl:message name="ResetPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFriend" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFriendSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFriend" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFriendSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="HandlerFriendRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:HandlerFriendRequest" />
+  </wsdl:message>
+  <wsdl:message name="HandlerFriendRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:HandlerFriendRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendRequestListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFriendRequestList" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendRequestListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFriendRequestListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFriendList" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFriendListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageContentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageContent" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageContentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFaceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFace" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFaceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFaceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFace" />
+  </wsdl:message>
+  <wsdl:message name="GetFaceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnHandlerEventListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnHandlerEventList" />
+  </wsdl:message>
+  <wsdl:message name="GetUnHandlerEventListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnHandlerEventListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderUidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSenderUid" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderUidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSenderUidResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="pwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetOut" />
+  <wsdl:message name="RegUserHttpGetIn">
+    <wsdl:part name="pwd" type="s:string" />
+    <wsdl:part name="alias" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegUserHttpGetOut" />
+  <wsdl:message name="ResetPwdHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="oldpwd" type="s:string" />
+    <wsdl:part name="newpwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetPwdHttpGetOut" />
+  <wsdl:message name="AddFriendHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="touid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendHttpGetOut" />
+  <wsdl:message name="DeleteFriendHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="uid1" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFriendHttpGetOut" />
+  <wsdl:message name="HandlerFriendRequestHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="senduid" type="s:string" />
+    <wsdl:part name="handler" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HandlerFriendRequestHttpGetOut" />
+  <wsdl:message name="GetFriendRequestListHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendRequestListHttpGetOut" />
+  <wsdl:message name="GetFriendListHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendListHttpGetOut" />
+  <wsdl:message name="SendMessageHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="touid" type="s:string" />
+    <wsdl:part name="msgtype" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetOut" />
+  <wsdl:message name="GetMessageHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="touid" type="s:string" />
+    <wsdl:part name="isread" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpGetOut" />
+  <wsdl:message name="GetMessageContentHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="msgid" type="s:string" />
+    <wsdl:part name="msgtype" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageContentHttpGetOut" />
+  <wsdl:message name="GetUserInfoHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="queryuid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpGetOut" />
+  <wsdl:message name="UpdateFaceHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="base64str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFaceHttpGetOut" />
+  <wsdl:message name="GetFaceHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="queryuid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFaceHttpGetOut" />
+  <wsdl:message name="UpdateUserInfoHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="alias" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="sex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoHttpGetOut" />
+  <wsdl:message name="GetUnHandlerEventListHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnHandlerEventListHttpGetOut" />
+  <wsdl:message name="GetSenderUidHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderUidHttpGetOut" />
+  <wsdl:message name="LoginHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="pwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostOut" />
+  <wsdl:message name="RegUserHttpPostIn">
+    <wsdl:part name="pwd" type="s:string" />
+    <wsdl:part name="alias" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegUserHttpPostOut" />
+  <wsdl:message name="ResetPwdHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="oldpwd" type="s:string" />
+    <wsdl:part name="newpwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetPwdHttpPostOut" />
+  <wsdl:message name="AddFriendHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="touid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFriendHttpPostOut" />
+  <wsdl:message name="DeleteFriendHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="uid1" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFriendHttpPostOut" />
+  <wsdl:message name="HandlerFriendRequestHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="senduid" type="s:string" />
+    <wsdl:part name="handler" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HandlerFriendRequestHttpPostOut" />
+  <wsdl:message name="GetFriendRequestListHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendRequestListHttpPostOut" />
+  <wsdl:message name="GetFriendListHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFriendListHttpPostOut" />
+  <wsdl:message name="SendMessageHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="touid" type="s:string" />
+    <wsdl:part name="msgtype" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostOut" />
+  <wsdl:message name="GetMessageHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="touid" type="s:string" />
+    <wsdl:part name="isread" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpPostOut" />
+  <wsdl:message name="GetMessageContentHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="msgid" type="s:string" />
+    <wsdl:part name="msgtype" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageContentHttpPostOut" />
+  <wsdl:message name="GetUserInfoHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="queryuid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpPostOut" />
+  <wsdl:message name="UpdateFaceHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="base64str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFaceHttpPostOut" />
+  <wsdl:message name="GetFaceHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="queryuid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFaceHttpPostOut" />
+  <wsdl:message name="UpdateUserInfoHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="alias" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="sex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoHttpPostOut" />
+  <wsdl:message name="GetUnHandlerEventListHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnHandlerEventListHttpPostOut" />
+  <wsdl:message name="GetSenderUidHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSenderUidHttpPostOut" />
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登入</wsdl:documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">注册</wsdl:documentation>
+      <wsdl:input message="tns:RegUserSoapIn" />
+      <wsdl:output message="tns:RegUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改密码</wsdl:documentation>
+      <wsdl:input message="tns:ResetPwdSoapIn" />
+      <wsdl:output message="tns:ResetPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加好友</wsdl:documentation>
+      <wsdl:input message="tns:AddFriendSoapIn" />
+      <wsdl:output message="tns:AddFriendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除好友</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFriendSoapIn" />
+      <wsdl:output message="tns:DeleteFriendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HandlerFriendRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">处理好友请求</wsdl:documentation>
+      <wsdl:input message="tns:HandlerFriendRequestSoapIn" />
+      <wsdl:output message="tns:HandlerFriendRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendRequestList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取好友请求列表</wsdl:documentation>
+      <wsdl:input message="tns:GetFriendRequestListSoapIn" />
+      <wsdl:output message="tns:GetFriendRequestListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取好友列表</wsdl:documentation>
+      <wsdl:input message="tns:GetFriendListSoapIn" />
+      <wsdl:output message="tns:GetFriendListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送信息</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageSoapIn" />
+      <wsdl:output message="tns:SendMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取信息</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageSoapIn" />
+      <wsdl:output message="tns:GetMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageContent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取信息内容</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageContentSoapIn" />
+      <wsdl:output message="tns:GetMessageContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询账户资料</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFace">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改头像</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFaceSoapIn" />
+      <wsdl:output message="tns:UpdateFaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFace">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取头像</wsdl:documentation>
+      <wsdl:input message="tns:GetFaceSoapIn" />
+      <wsdl:output message="tns:GetFaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新资料</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserInfoSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnHandlerEventList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取未处理事件列表</wsdl:documentation>
+      <wsdl:input message="tns:GetUnHandlerEventListSoapIn" />
+      <wsdl:output message="tns:GetUnHandlerEventListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderUid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取未处理信息发送者Uid</wsdl:documentation>
+      <wsdl:input message="tns:GetSenderUidSoapIn" />
+      <wsdl:output message="tns:GetSenderUidSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpGet">
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登入</wsdl:documentation>
+      <wsdl:input message="tns:LoginHttpGetIn" />
+      <wsdl:output message="tns:LoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">注册</wsdl:documentation>
+      <wsdl:input message="tns:RegUserHttpGetIn" />
+      <wsdl:output message="tns:RegUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改密码</wsdl:documentation>
+      <wsdl:input message="tns:ResetPwdHttpGetIn" />
+      <wsdl:output message="tns:ResetPwdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加好友</wsdl:documentation>
+      <wsdl:input message="tns:AddFriendHttpGetIn" />
+      <wsdl:output message="tns:AddFriendHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除好友</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFriendHttpGetIn" />
+      <wsdl:output message="tns:DeleteFriendHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HandlerFriendRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">处理好友请求</wsdl:documentation>
+      <wsdl:input message="tns:HandlerFriendRequestHttpGetIn" />
+      <wsdl:output message="tns:HandlerFriendRequestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendRequestList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取好友请求列表</wsdl:documentation>
+      <wsdl:input message="tns:GetFriendRequestListHttpGetIn" />
+      <wsdl:output message="tns:GetFriendRequestListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取好友列表</wsdl:documentation>
+      <wsdl:input message="tns:GetFriendListHttpGetIn" />
+      <wsdl:output message="tns:GetFriendListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送信息</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageHttpGetIn" />
+      <wsdl:output message="tns:SendMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取信息</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageHttpGetIn" />
+      <wsdl:output message="tns:GetMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageContent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取信息内容</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageContentHttpGetIn" />
+      <wsdl:output message="tns:GetMessageContentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询账户资料</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoHttpGetIn" />
+      <wsdl:output message="tns:GetUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFace">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改头像</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFaceHttpGetIn" />
+      <wsdl:output message="tns:UpdateFaceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFace">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取头像</wsdl:documentation>
+      <wsdl:input message="tns:GetFaceHttpGetIn" />
+      <wsdl:output message="tns:GetFaceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新资料</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserInfoHttpGetIn" />
+      <wsdl:output message="tns:UpdateUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnHandlerEventList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取未处理事件列表</wsdl:documentation>
+      <wsdl:input message="tns:GetUnHandlerEventListHttpGetIn" />
+      <wsdl:output message="tns:GetUnHandlerEventListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderUid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取未处理信息发送者Uid</wsdl:documentation>
+      <wsdl:input message="tns:GetSenderUidHttpGetIn" />
+      <wsdl:output message="tns:GetSenderUidHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpPost">
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登入</wsdl:documentation>
+      <wsdl:input message="tns:LoginHttpPostIn" />
+      <wsdl:output message="tns:LoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">注册</wsdl:documentation>
+      <wsdl:input message="tns:RegUserHttpPostIn" />
+      <wsdl:output message="tns:RegUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改密码</wsdl:documentation>
+      <wsdl:input message="tns:ResetPwdHttpPostIn" />
+      <wsdl:output message="tns:ResetPwdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加好友</wsdl:documentation>
+      <wsdl:input message="tns:AddFriendHttpPostIn" />
+      <wsdl:output message="tns:AddFriendHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除好友</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFriendHttpPostIn" />
+      <wsdl:output message="tns:DeleteFriendHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HandlerFriendRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">处理好友请求</wsdl:documentation>
+      <wsdl:input message="tns:HandlerFriendRequestHttpPostIn" />
+      <wsdl:output message="tns:HandlerFriendRequestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendRequestList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取好友请求列表</wsdl:documentation>
+      <wsdl:input message="tns:GetFriendRequestListHttpPostIn" />
+      <wsdl:output message="tns:GetFriendRequestListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取好友列表</wsdl:documentation>
+      <wsdl:input message="tns:GetFriendListHttpPostIn" />
+      <wsdl:output message="tns:GetFriendListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送信息</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageHttpPostIn" />
+      <wsdl:output message="tns:SendMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取信息</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageHttpPostIn" />
+      <wsdl:output message="tns:GetMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageContent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取信息内容</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageContentHttpPostIn" />
+      <wsdl:output message="tns:GetMessageContentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询账户资料</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoHttpPostIn" />
+      <wsdl:output message="tns:GetUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFace">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改头像</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFaceHttpPostIn" />
+      <wsdl:output message="tns:UpdateFaceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFace">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取头像</wsdl:documentation>
+      <wsdl:input message="tns:GetFaceHttpPostIn" />
+      <wsdl:output message="tns:GetFaceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新资料</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserInfoHttpPostIn" />
+      <wsdl:output message="tns:UpdateUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnHandlerEventList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取未处理事件列表</wsdl:documentation>
+      <wsdl:input message="tns:GetUnHandlerEventListHttpPostIn" />
+      <wsdl:output message="tns:GetUnHandlerEventListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderUid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取未处理信息发送者Uid</wsdl:documentation>
+      <wsdl:input message="tns:GetSenderUidHttpPostIn" />
+      <wsdl:output message="tns:GetSenderUidHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegUser">
+      <soap:operation soapAction="http://tempuri.org/RegUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPwd">
+      <soap:operation soapAction="http://tempuri.org/ResetPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <soap:operation soapAction="http://tempuri.org/AddFriend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <soap:operation soapAction="http://tempuri.org/DeleteFriend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandlerFriendRequest">
+      <soap:operation soapAction="http://tempuri.org/HandlerFriendRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendRequestList">
+      <soap:operation soapAction="http://tempuri.org/GetFriendRequestList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendList">
+      <soap:operation soapAction="http://tempuri.org/GetFriendList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageContent">
+      <soap:operation soapAction="http://tempuri.org/GetMessageContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFace">
+      <soap:operation soapAction="http://tempuri.org/UpdateFace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFace">
+      <soap:operation soapAction="http://tempuri.org/GetFace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnHandlerEventList">
+      <soap:operation soapAction="http://tempuri.org/GetUnHandlerEventList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderUid">
+      <soap:operation soapAction="http://tempuri.org/GetSenderUid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegUser">
+      <soap12:operation soapAction="http://tempuri.org/RegUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPwd">
+      <soap12:operation soapAction="http://tempuri.org/ResetPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <soap12:operation soapAction="http://tempuri.org/AddFriend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFriend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandlerFriendRequest">
+      <soap12:operation soapAction="http://tempuri.org/HandlerFriendRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendRequestList">
+      <soap12:operation soapAction="http://tempuri.org/GetFriendRequestList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendList">
+      <soap12:operation soapAction="http://tempuri.org/GetFriendList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageContent">
+      <soap12:operation soapAction="http://tempuri.org/GetMessageContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFace">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFace">
+      <soap12:operation soapAction="http://tempuri.org/GetFace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnHandlerEventList">
+      <soap12:operation soapAction="http://tempuri.org/GetUnHandlerEventList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderUid">
+      <soap12:operation soapAction="http://tempuri.org/GetSenderUid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpGet" type="tns:WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RegUser">
+      <http:operation location="/RegUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPwd">
+      <http:operation location="/ResetPwd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <http:operation location="/AddFriend" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <http:operation location="/DeleteFriend" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="HandlerFriendRequest">
+      <http:operation location="/HandlerFriendRequest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendRequestList">
+      <http:operation location="/GetFriendRequestList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendList">
+      <http:operation location="/GetFriendList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageContent">
+      <http:operation location="/GetMessageContent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFace">
+      <http:operation location="/UpdateFace" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFace">
+      <http:operation location="/GetFace" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <http:operation location="/UpdateUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnHandlerEventList">
+      <http:operation location="/GetUnHandlerEventList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderUid">
+      <http:operation location="/GetSenderUid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpPost" type="tns:WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RegUser">
+      <http:operation location="/RegUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPwd">
+      <http:operation location="/ResetPwd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <http:operation location="/AddFriend" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <http:operation location="/DeleteFriend" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="HandlerFriendRequest">
+      <http:operation location="/HandlerFriendRequest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendRequestList">
+      <http:operation location="/GetFriendRequestList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFriendList">
+      <http:operation location="/GetFriendList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageContent">
+      <http:operation location="/GetMessageContent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFace">
+      <http:operation location="/UpdateFace" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFace">
+      <http:operation location="/GetFace" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <http:operation location="/UpdateUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnHandlerEventList">
+      <http:operation location="/GetUnHandlerEventList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderUid">
+      <http:operation location="/GetSenderUid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://10.3.0.18:8080/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://10.3.0.18:8080/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpGet" binding="tns:WebServiceHttpGet">
+      <http:address location="http://10.3.0.18:8080/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpPost" binding="tns:WebServiceHttpPost">
+      <http:address location="http://10.3.0.18:8080/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

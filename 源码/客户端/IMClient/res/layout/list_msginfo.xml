@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_selector"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/msg_info_face"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/face_icon_people" />
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/msg_info_alias"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:text="用户昵称"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#FF000000"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/msg_info_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:text="消息内容"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#FFADADAD"
+            android:textSize="11dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:background="#00000000"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/msg_info_time"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:text="2017-01-01"
+            android:textColor="#FFADADAD"
+            android:layout_marginRight="5dp"
+            android:textSize="11dp" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/msg_info_count"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/shape_msg_count"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#FFFFFFFF"
+            android:textSize="11dp" />
+    </LinearLayout>
+
+</LinearLayout>

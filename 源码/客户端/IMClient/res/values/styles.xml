@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="AppBaseTheme1" parent="android:Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/actionbar_def_style</item>
+        <item name="android:windowBackground">@color/activitycolor</item>
+    </style>
+
+    <style name="actionbar_def_style" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#398DEF</item>
+    </style>
+
+</resources>

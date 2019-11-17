@@ -1,0 +1,5 @@
+G:\C# Work\IMAccount\IMAccount\bin\IMAccount.dll
+G:\C# Work\IMAccount\IMAccount\bin\IMAccount.pdb
+G:\C# Work\IMAccount\IMAccount\obj\Debug\IMAccount.dll
+G:\C# Work\IMAccount\IMAccount\obj\Debug\IMAccount.pdb
+G:\C# Work\IMAccount\IMAccount\obj\Debug\IMAccount.csprojResolveAssemblyReference.cache

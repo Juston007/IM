@@ -1,0 +1,5 @@
+c:\users\administrator\documents\visual studio 2012\Projects\IM\IM\obj\Debug\IMModel.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2012\Projects\IM\IM\bin\Debug\IM.dll
+c:\users\administrator\documents\visual studio 2012\Projects\IM\IM\bin\Debug\IM.pdb
+c:\users\administrator\documents\visual studio 2012\Projects\IM\IM\obj\Debug\IM.dll
+c:\users\administrator\documents\visual studio 2012\Projects\IM\IM\obj\Debug\IM.pdb

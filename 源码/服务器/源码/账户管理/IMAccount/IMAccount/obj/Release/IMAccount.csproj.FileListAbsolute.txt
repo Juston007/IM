@@ -1,0 +1,14 @@
+G:\C# Work\IMAccount\IMAccount\bin\IMAccount.dll
+G:\C# Work\IMAccount\IMAccount\bin\IMAccount.pdb
+G:\C# Work\IMAccount\IMAccount\obj\Release\IMAccount.dll
+G:\C# Work\IMAccount\IMAccount\obj\Release\IMAccount.pdb
+D:\开发资料\IM设计\服务器\源码\IMAccount\IMAccount\bin\IMAccount.dll
+D:\开发资料\IM设计\服务器\源码\IMAccount\IMAccount\bin\IMAccount.pdb
+D:\开发资料\IM设计\服务器\源码\IMAccount\IMAccount\obj\Release\IMAccount.csprojResolveAssemblyReference.cache
+D:\开发资料\IM设计\服务器\源码\IMAccount\IMAccount\obj\Release\IMAccount.dll
+D:\开发资料\IM设计\服务器\源码\IMAccount\IMAccount\obj\Release\IMAccount.pdb
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\账户管理\IMAccount\IMAccount\bin\IMAccount.dll
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\账户管理\IMAccount\IMAccount\bin\IMAccount.pdb
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\账户管理\IMAccount\IMAccount\obj\Release\IMAccount.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\账户管理\IMAccount\IMAccount\obj\Release\IMAccount.dll
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\账户管理\IMAccount\IMAccount\obj\Release\IMAccount.pdb

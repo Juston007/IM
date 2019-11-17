@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">飞信</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_guide">GuideActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main_frame">MainFrameActivity</string>
+    <string name="title_activity_msg">MsgActivity</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
+    <string name="title_activity_me">MeActivity</string>
+    <string name="title_activity_me_info">MeInfoActivity</string>
+    <string name="title_activity_user_info">UserInfoActivity</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_text_browse">TextBrowseActivity</string>
+    <string name="title_activity_image">ImageActivity</string>
+    <string name="title_activity_handler_request">HandlerRequestActivity</string>
+
+</resources>

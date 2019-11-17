@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMAccount", "IMAccount\IMAccount.csproj", "{FE11A9B8-673F-480E-997F-D59A65DD1794}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE11A9B8-673F-480E-997F-D59A65DD1794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE11A9B8-673F-480E-997F-D59A65DD1794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE11A9B8-673F-480E-997F-D59A65DD1794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE11A9B8-673F-480E-997F-D59A65DD1794}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

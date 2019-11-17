@@ -1,0 +1,42 @@
+c:\users\administrator\documents\visual studio 2012\Projects\HelpUtil\HelpUtil\obj\Debug\HelpUtil.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2012\Projects\HelpUtil\HelpUtil\bin\Debug\HelpUtil.dll
+c:\users\administrator\documents\visual studio 2012\Projects\HelpUtil\HelpUtil\bin\Debug\HelpUtil.pdb
+c:\users\administrator\documents\visual studio 2012\Projects\HelpUtil\HelpUtil\obj\Debug\HelpUtil.dll
+c:\users\administrator\documents\visual studio 2012\Projects\HelpUtil\HelpUtil\obj\Debug\HelpUtil.pdb
+C:\Users\Administrator\documents\visual studio 2012\Projects\HelpUtil\HelpUtil\bin\Debug\IM.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\HelpUtil\HelpUtil\bin\Debug\IM.pdb
+D:\开发资料\IM设计\服务器\HelpUtil\HelpUtil\bin\Debug\HelpUtil.dll
+D:\开发资料\IM设计\服务器\HelpUtil\HelpUtil\bin\Debug\HelpUtil.pdb
+D:\开发资料\IM设计\服务器\HelpUtil\HelpUtil\bin\Debug\IM.dll
+D:\开发资料\IM设计\服务器\HelpUtil\HelpUtil\bin\Debug\IM.pdb
+D:\开发资料\IM设计\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.csprojResolveAssemblyReference.cache
+D:\开发资料\IM设计\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.dll
+D:\开发资料\IM设计\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.pdb
+C:\Users\Administrator\Desktop\服务器\HelpUtil\HelpUtil\bin\Debug\HelpUtil.dll
+C:\Users\Administrator\Desktop\服务器\HelpUtil\HelpUtil\bin\Debug\HelpUtil.pdb
+C:\Users\Administrator\Desktop\服务器\HelpUtil\HelpUtil\bin\Debug\IM.dll
+C:\Users\Administrator\Desktop\服务器\HelpUtil\HelpUtil\bin\Debug\IM.pdb
+C:\Users\Administrator\Desktop\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.dll
+C:\Users\Administrator\Desktop\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.pdb
+C:\Users\Administrator\Desktop\IM设计\服务器\HelpUtil\HelpUtil\bin\Debug\HelpUtil.dll
+C:\Users\Administrator\Desktop\IM设计\服务器\HelpUtil\HelpUtil\bin\Debug\HelpUtil.pdb
+C:\Users\Administrator\Desktop\IM设计\服务器\HelpUtil\HelpUtil\bin\Debug\IM.dll
+C:\Users\Administrator\Desktop\IM设计\服务器\HelpUtil\HelpUtil\bin\Debug\IM.pdb
+C:\Users\Administrator\Desktop\IM设计\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\IM设计\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.dll
+C:\Users\Administrator\Desktop\IM设计\服务器\HelpUtil\HelpUtil\obj\Debug\HelpUtil.pdb
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\obj\Debug\HelpUtil.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\obj\Debug\HelpUtil.dll
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\obj\Debug\HelpUtil.pdb
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\bin\Debug\HelpUtil.dll
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\bin\Debug\HelpUtil.pdb
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\bin\Debug\IM.dll
+C:\Users\Administrator\Desktop\IM即时通信设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\bin\Debug\IM.pdb
+D:\开发资料\原创系统\即时通信系统设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\bin\Debug\HelpUtil.dll
+D:\开发资料\原创系统\即时通信系统设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\bin\Debug\HelpUtil.pdb
+D:\开发资料\原创系统\即时通信系统设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\bin\Debug\IM.dll
+D:\开发资料\原创系统\即时通信系统设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\bin\Debug\IM.pdb
+D:\开发资料\原创系统\即时通信系统设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\obj\Debug\HelpUtil.csprojResolveAssemblyReference.cache
+D:\开发资料\原创系统\即时通信系统设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\obj\Debug\HelpUtil.dll
+D:\开发资料\原创系统\即时通信系统设计\源码\服务器\源码\WebService\HelpUtil\HelpUtil\obj\Debug\HelpUtil.pdb
